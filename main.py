@@ -52,9 +52,8 @@
 # from datetime import date
 
 # current_date = date.today()
-# a = date.today(date, month, year)
 # print(current_date)
-# print(a)
+# print('{}.{}.{}'.format(current_date.day, current_date.month, current_date.year))
 
 
 
@@ -103,13 +102,17 @@
 
 # Циклы
 
-# ?????1. Посчитайте количество символов в строке 'Python - это Питон!', 
+# 1. Посчитайте количество символов в строке 'Python - это Питон!', 
 # использовав счетчики на основе циклов for и while.
 
+# text = 'Python - это Питон!'
+# count = 0
 
-# text = ['Python - это Питон!']
-# for index in range(len(text)):
-#    print(len(text))
+# for i in range(len(text)): 
+#     count += 1  
+# print(count)
+
+
 
 # 2. Найдите сумму всех элементов списка [1, '2', 3, 4, '5'], предварительно приводя строки к целым числам.
 
@@ -122,18 +125,21 @@
 #     list= numbers[(numbers.index(i) - 1)]
 # print (sum)
 
-# ?????????? 3. Используя циклы, проверьте при помощи оператора in наличие символов строки 'abcd\e123' 
+# 3. Используя циклы, проверьте при помощи оператора in наличие символов строки 'abcd\e123' 
 # в строке 'bad_cat_23', выводя результаты проверки на экран в виде «Символ "a" есть в 
 # "bad_cat_23".» или «Символа "n" нет в "bad_cat_23".».
+
+
 
 # a = 'bad_cat_23'
 # b = 'abcd\e123' 
 
-# for i in b:
-#     if i in a:
-#         print('have')
-# else: 
-#      print('no')
+
+# for j in b:
+#     if j in a:
+#         print(f'Символ {j} есть в "bad_cat_23".')
+#     else:
+#         print(f'Символа {j} нет в "bad_cat_23".')
 
 #  task 3
 # Cгенерируйте и выведите на экран мозаичное и
@@ -152,18 +158,27 @@
 #         print('')
 
 
-# ?????????5. Выведите на экран таблицу умножения чисел от одного до девяти.
+# 5. Выведите на экран таблицу умножения чисел от одного до девяти.
 
-# for i in range(0,9):
-#     if i % 2 == 0:
-#         for j in range (0, 9):
-#             print ('| x | 1: ]|', end = '')
-#         print('')
-
+# numbers = [ i for i in range (1, 10)]
+# print('----+----------------------------------------------------------------------------')
+# print('| x |', end='\t')
+# numbers_count = len(numbers) - 1
+# for n in numbers:
+#     if numbers.index(n) == numbers_count:
+#         print(f'{n}', end= ' ')
 #     else: 
-#         for i in range (0, 9):
-#             print ('| 1 |, [1: ]|', end = '')
-#         print('')
+#         print (f'{n}', end='\t')
+# print('|')
+# print('----+----------------------------------------------------------------------------')
+
+# for i in numbers:
+#    print(f'| {i} |', end = '\t')
+#    for j in numbers:
+#         print(f'{i * j:0>2d}', end= '\t')
+        
+#    print('')
+# print('----+----------------------------------------------------------------------------')
 
 
 
@@ -174,14 +189,30 @@
 # В пароле должно быть от 8 до 15 символов Юникода из диапазонов 48-57 (цифры), 
 # 65-90 (буквы латинского алфавита в верхнем регистре) и 97-122 (буквы латинского алфавита в нижнем регистре). 
 # Сгенерируйте и выведите на экран три пароля.
-import random
-num = input('login ')
-pas = ''
-for x in range(15): #Количество символов (16)
-    pas= pas + random.choice(list('48495051525354555657abcdefghigklmnopqrstuvyxwzABCDEFGHIGKLMNOPQRSTUVYXWZ')) 
-    pas2 = pas + random.choice(list('48495051525354555657abcdefghigklmnopqrstuvyxwzABCDEFGHIGKLMNOPQRSTUVYXWZ')) 
-    pas3 = pas + random.choice(list('48495051525354555657abcdefghigklmnopqrstuvyxwzABCDEFGHIGKLMNOPQRSTUVYXWZ')) 
+# import random
+# num = input('login ')
+# pas = ''
+# for x in range(15): #Количество символов (16)
+#     pas= pas + random.choice(list('48495051525354555657abcdefghigklmnopqrstuvyxwzABCDEFGHIGKLMNOPQRSTUVYXWZ')) 
+#     pas2 = pas + random.choice(list('48495051525354555657abcdefghigklmnopqrstuvyxwzABCDEFGHIGKLMNOPQRSTUVYXWZ')) 
+#     pas3 = pas + random.choice(list('48495051525354555657abcdefghigklmnopqrstuvyxwzABCDEFGHIGKLMNOPQRSTUVYXWZ')) 
    
-print('Hello, ', num, 'your first password is: ', pas)
-print('Hello, ', num, 'your second password is: ', pas2)
-print('Hello, ', num, 'your third password is: ', pas3)
+# print('Hello, ', num, 'your first password is: ', pas)
+# print('Hello, ', num, 'your second password is: ', pas2)
+# print('Hello, ', num, 'your third password is: ', pas3)
+
+
+
+
+
+
+# 1.
+# 1 до 100 числа только кратные 5
+# number_list = [i for i in range (1, 101) if i %5 == 0]
+
+# print(number_list)
+
+# 2.
+# number_list = [i  for i in range (1, 21) if i >7 and i<9 ]
+
+# print(number_list)
